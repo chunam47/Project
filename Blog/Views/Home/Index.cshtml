@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div id="sub-nav">
+    <div id="time">
+        <script>
+            function thoigian() {
+                var time = new Date();
+                var gio = time.getHours();
+                var phut = time.getMinutes();
+                var giay = time.getSeconds();
+                if (gio < 10)
+                    gio = "0" + gio;
+                if (phut < 10)
+                    phut = "0" + phut;
+                if (giay < 10)
+                    giay = "0" + giay;
+                document.getElementById("time").innerHTML = gio + ":" + phut + ":" + giay + " (GMT +7)";
+                setTimeout("thoigian()", 1000);
+            }
+            thoigian();
+
+        </script>
+    </div>
+
+</div>
+<div id="content-wrapper">
+    <div id="main">
+        <div id="headlines">
+            <div id="main-headline">
+                <h2 class="heading">Kinh tế</h2>
+                <img src="https://cdnmedia.baotintuc.vn/Upload/xWDHf0fP0gRVbF1yzOohA/files/2020/04/1204-evn.jpg" alt="" />
+                <h1><a href="#">Vì sao hóa đơn tiền điện tăng cao?.</a></h1>
+                <p class="author"><span>10.06.2020</span></p>
+                <p>Tại Hà Nội mấy ngày gần đây, nhiều khách hàng ở huyện Gia Lâm, Đông Anh và quận Hai Bà Trưng, Thanh Xuân phản ánh, hóa đơn tiền điện tháng 5 và 6 tăng cao. Khách hàng bày tỏ nghi ngại có sự nhầm lẫn trong tính tiền điện.</p>
+                <p><a href="#">Xem chi tiết &raquo;</a></p>
+                <h2 class="heading">Chính trị</h2>
+                <img src="https://cdnmedia.baotintuc.vn/Upload/DmtgOUlHWBO5POIHzIwr1A/files/2020/06/14/quoc-hoi-140620.jpg" alt="" />
+                <h1><a href="#">Tuần làm việc từ ngày 15-19/6: Quốc hội quyết định nhiều vấn đề quan trọng</a></h1>
+                <p class="author"><span>10.06.2020</span></p>
+                <p>Trong tuần làm việc cuối cùng của Kỳ họp thứ 9 (từ ngày 15-19/6), Quốc hội thảo luận và quyết ....</p>
+                <p><a href="#">Xem chi tiết &raquo;</a></p>
+            </div>
+
+            <div id="more-headlines">
+                <h2 class="heading">Tin Tức nổi bật</h2>
+
+                @foreach (var tin in Model)
+                {
+                    <li>
+                        <img src="https://cdnmedia.baotintuc.vn/Upload/xWDHf0fP0gRVbF1yzOohA/files/2020/04/1204-evn.jpg" alt="" class="ad"/>
+                        <p class="author"><span>10.06.2020</span></p>
+                        <h3><a href="@Url.Action("Details","Home",new { id = tin.MATIN})"> @tin.TENTIN </a></h3>
+                        <p>@tin.MOTA</p>
+                        <p><a href="#">Xem chi tiết &raquo;</a></p>
+                    </li>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="sidebars">
+        <a href="#"><img src="~/img/side-ad.png" alt="" class="ad" /></a> <a href="#"><img src="~/img/side-ad.png" alt="" class="ad-right" /></a> <a href="#"><img src="img/side-ad.png" alt="" class="ad" /></a> <a href="#"><img src="img/side-ad.png" alt="" class="ad-right" /></a>
+        <h2 class="heading-blue">Thể Thao</h2>
+        <img src="~/img/14062020realmadrid1.jpg" alt="" , class="ad" />
+        <h3><a href="#">Real Madrid - Eibar: Mệnh lệnh phải thắng.</a></h3>
+        <p>Trước việc Barca đại thắng, Real Madrid chắc chắn sẽ phải cháy hết mình ở trận đấu rạng sáng mai ...</p>
+        <p class="author"><span>10.06.2020</span></p>
+        <p><a href="#">Xem chi tiết &raquo;</a></p>
+        <h2 class="heading">Xã hội</h2>
+        <img src="https://cdnmedia.baotintuc.vn/Upload/ekaE01yuAw3S4G2j0Rtmuw/files/2020/06/chitrachodoituonglaodongtudo070620.jpg" alt="" class="ad" />
+        <h3><a href="#">Chi trả hỗ trợ lao động mất việc do dịch COVID-19 tại Hà Nội triển khai chậm.</a></h3>
+        <p class="author"><span>10.06.2020</span></p>
+        <p>Công tác chi trả hỗ trợ cho các nhóm đối tượng lao động, hộ kinh doanh và người sử dụng lao động gặp khó khăn do ảnh hưởng của đại dịch COVID-19 theo gói 62.000 tỷ đồng tại TP Hà Nội chậm triển khai.</p>
+        <p><a href="#">Xem chi tiết &raquo;</a></p>
+        <h2 class="heading">In the Community</h2>
+        <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
+        <h4><a href="#">Lorem ipsum dolor sit amet eget, consectetur adipiscing elit</a></h4>
+    </div>
+</div>
+<div id="extras">
+    <div id="recommended">
+        <h2 class="heading">Recommended Stories</h2>
+        <ul>
+            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
+            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
+            <li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
+            <li class="last"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit &raquo;</a></li>
+        </ul>
+    </div>
+    <div id="programs">
+        <h2 class="heading">What's On Tonight</h2>
+        <img src="~/img/rick.jpg" alt="" /> <img src="~/img/cbc.png" alt="" />
+    </div>
+    <div id="cartoon">
+        <h2 class="heading">Humour</h2>
+        <img src="~/img/cartoon.jpg" alt="" />
+    </div>
+</div>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dbBlog">
+  <DataContextMoniker Name="/dbBlogDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b8239e32-e60a-4891-909d-88d67624c7fb" absoluteBounds="3.5, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbBlogDataContext/TIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="511b6251-91df-4512-a4da-fe4cb569ae04" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d48ed07a-1f36-40fc-a959-d334d4cfad7f" absoluteBounds="0.75, 1.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbBlogDataContext/TACGIA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="87c2ed57-5001-4deb-88c8-1cb0ac64c7dd" absoluteBounds="0.765, 1.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="66dc3077-cece-4719-ac52-f5c30bc1272f" absoluteBounds="0.75, 4, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dbBlogDataContext/CHUDE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="070fc383-08e8-41d2-9a35-b9cd62097cb0" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f0305d4-ba66-497f-8e57-a41668feae9e" absoluteBounds="0.75, 6, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/dbBlogDataContext/ANH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="154a564a-12e5-4f89-9787-f11b51e7a240" absoluteBounds="0.765, 6.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8fefdccb-f272-4046-b86d-81b6686aaa1e" absoluteBounds="3.75, 4.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbBlogDataContext/ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a86a34db-a893-48af-9aa6-97fcb1624d50" absoluteBounds="3.765, 5.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.09699625651042); (3.5 : 2.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbBlogDataContext/TACGIA/TACGIA_TIN" />
+      <nodes>
+        <classShapeMoniker Id="d48ed07a-1f36-40fc-a959-d334d4cfad7f" />
+        <classShapeMoniker Id="b8239e32-e60a-4891-909d-88d67624c7fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.34375); (3.59375 : 4.34375); (3.59375 : 3.34780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbBlogDataContext/CHUDE/CHUDE_TIN" />
+      <nodes>
+        <classShapeMoniker Id="66dc3077-cece-4719-ac52-f5c30bc1272f" />
+        <classShapeMoniker Id="b8239e32-e60a-4891-909d-88d67624c7fb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.69639322916667); (3.5624975 : 6.69639322916667); (3.5624975 : 3.34780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbBlogDataContext/ANH/ANH_TIN" />
+      <nodes>
+        <classShapeMoniker Id="2f0305d4-ba66-497f-8e57-a41668feae9e" />
+        <classShapeMoniker Id="b8239e32-e60a-4891-909d-88d67624c7fb" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

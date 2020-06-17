@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Blog.Models.TIN>
+@{
+    ViewBag.Title = "TheoChuDe";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Blog.Models;
+<h2></h2>
+@foreach (var tin in Model)
+{
+    <div class="list">
+        <li>
+            <div class="img">
+                <img src="https://cdnmedia.baotintuc.vn/Upload/xWDHf0fP0gRVbF1yzOohA/files/2020/04/1204-evn.jpg" alt="" />
+            </div>
+            <div class="title"> <h3><a href="@Url.Action("Details","Home",new { id = tin.MATIN})"> @tin.TENTIN </a></h3></div>
+            <div class="mota">
+                <p>@tin.MOTA</p>
+            </div>
+        </li>
+    </div>
+}
