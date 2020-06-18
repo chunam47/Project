@@ -10,9 +10,9 @@
     <div class="list">
         <li>
             <div class="img">
-                <img src="https://cdnmedia.baotintuc.vn/Upload/xWDHf0fP0gRVbF1yzOohA/files/2020/04/1204-evn.jpg" alt="" />
+                @*<img src="~/HinhAnh/@Model.MAANH" alt="" class="ad" />*@
             </div>
-            <div class="title"> <h3><a href="@Url.Action("Details","Home",new { id = tin.MATIN})"> @tin.TENTIN </a></h3></div>
+            <div class="title"> <h3><a href="@Url.Action("Detail","Home",new { id = tin.MATIN})"> @tin.TENTIN </a></h3></div>
             <div class="mota">
                 <p>@tin.MOTA</p>
             </div>

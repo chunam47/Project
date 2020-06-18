@@ -1,0 +1,14 @@
+﻿@*@model IEnumerable<Blog.Models.TIN>*@
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2></h2>
+<h3>@Model.TENTIN</h3>
+<div>
+    <img style="width: 100%" src="~/HinhAnh/@Model.MAANH"/>    
+</div>
+<div>
+    <p style="font-size: 20px">@Model.CHITIET</p>
+</div>

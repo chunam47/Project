@@ -30,18 +30,15 @@ namespace Blog.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTIN(TIN instance);
-    partial void UpdateTIN(TIN instance);
-    partial void DeleteTIN(TIN instance);
-    partial void InsertTACGIA(TACGIA instance);
-    partial void UpdateTACGIA(TACGIA instance);
-    partial void DeleteTACGIA(TACGIA instance);
     partial void InsertCHUDE(CHUDE instance);
     partial void UpdateCHUDE(CHUDE instance);
     partial void DeleteCHUDE(CHUDE instance);
-    partial void InsertANH(ANH instance);
-    partial void UpdateANH(ANH instance);
-    partial void DeleteANH(ANH instance);
+    partial void InsertTACGIA(TACGIA instance);
+    partial void UpdateTACGIA(TACGIA instance);
+    partial void DeleteTACGIA(TACGIA instance);
+    partial void InsertTIN(TIN instance);
+    partial void UpdateTIN(TIN instance);
+    partial void DeleteTIN(TIN instance);
     partial void InsertADMIN(ADMIN instance);
     partial void UpdateADMIN(ADMIN instance);
     partial void DeleteADMIN(ADMIN instance);
@@ -77,11 +74,11 @@ namespace Blog.Models
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<TIN> TINs
+		public System.Data.Linq.Table<CHUDE> CHUDEs
 		{
 			get
 			{
-				return this.GetTable<TIN>();
+				return this.GetTable<CHUDE>();
 			}
 		}
 		
@@ -93,19 +90,11 @@ namespace Blog.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<CHUDE> CHUDEs
+		public System.Data.Linq.Table<TIN> TINs
 		{
 			get
 			{
-				return this.GetTable<CHUDE>();
-			}
-		}
-		
-		public System.Data.Linq.Table<ANH> ANHs
-		{
-			get
-			{
-				return this.GetTable<ANH>();
+				return this.GetTable<TIN>();
 			}
 		}
 		
@@ -118,169 +107,35 @@ namespace Blog.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TIN")]
-	public partial class TIN : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHUDE")]
+	public partial class CHUDE : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MATIN;
-		
-		private string _TENTIN;
-		
-		private string _MOTA;
-		
-		private System.Nullable<System.DateTime> _NGAYDANG;
-		
-		private string _MATACGIA;
-		
 		private string _MACHUDE;
 		
-		private string _MAANH;
+		private string _TENCHUDE;
 		
-		private string _CHITIET;
-		
-		private EntityRef<TACGIA> _TACGIA;
-		
-		private EntityRef<CHUDE> _CHUDE;
-		
-		private EntityRef<ANH> _ANH;
+		private EntitySet<TIN> _TINs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMATINChanging(string value);
-    partial void OnMATINChanged();
-    partial void OnTENTINChanging(string value);
-    partial void OnTENTINChanged();
-    partial void OnMOTAChanging(string value);
-    partial void OnMOTAChanged();
-    partial void OnNGAYDANGChanging(System.Nullable<System.DateTime> value);
-    partial void OnNGAYDANGChanged();
-    partial void OnMATACGIAChanging(string value);
-    partial void OnMATACGIAChanged();
     partial void OnMACHUDEChanging(string value);
     partial void OnMACHUDEChanged();
-    partial void OnMAANHChanging(string value);
-    partial void OnMAANHChanged();
-    partial void OnCHITIETChanging(string value);
-    partial void OnCHITIETChanged();
+    partial void OnTENCHUDEChanging(string value);
+    partial void OnTENCHUDEChanged();
     #endregion
 		
-		public TIN()
+		public CHUDE()
 		{
-			this._TACGIA = default(EntityRef<TACGIA>);
-			this._CHUDE = default(EntityRef<CHUDE>);
-			this._ANH = default(EntityRef<ANH>);
+			this._TINs = new EntitySet<TIN>(new Action<TIN>(this.attach_TINs), new Action<TIN>(this.detach_TINs));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATIN", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MATIN
-		{
-			get
-			{
-				return this._MATIN;
-			}
-			set
-			{
-				if ((this._MATIN != value))
-				{
-					this.OnMATINChanging(value);
-					this.SendPropertyChanging();
-					this._MATIN = value;
-					this.SendPropertyChanged("MATIN");
-					this.OnMATINChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTIN", DbType="NVarChar(50)")]
-		public string TENTIN
-		{
-			get
-			{
-				return this._TENTIN;
-			}
-			set
-			{
-				if ((this._TENTIN != value))
-				{
-					this.OnTENTINChanging(value);
-					this.SendPropertyChanging();
-					this._TENTIN = value;
-					this.SendPropertyChanged("TENTIN");
-					this.OnTENTINChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(MAX)")]
-		public string MOTA
-		{
-			get
-			{
-				return this._MOTA;
-			}
-			set
-			{
-				if ((this._MOTA != value))
-				{
-					this.OnMOTAChanging(value);
-					this.SendPropertyChanging();
-					this._MOTA = value;
-					this.SendPropertyChanged("MOTA");
-					this.OnMOTAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDANG", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYDANG
-		{
-			get
-			{
-				return this._NGAYDANG;
-			}
-			set
-			{
-				if ((this._NGAYDANG != value))
-				{
-					this.OnNGAYDANGChanging(value);
-					this.SendPropertyChanging();
-					this._NGAYDANG = value;
-					this.SendPropertyChanged("NGAYDANG");
-					this.OnNGAYDANGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATACGIA", DbType="Char(30)")]
-		public string MATACGIA
-		{
-			get
-			{
-				return this._MATACGIA;
-			}
-			set
-			{
-				if ((this._MATACGIA != value))
-				{
-					if (this._TACGIA.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMATACGIAChanging(value);
-					this.SendPropertyChanging();
-					this._MATACGIA = value;
-					this.SendPropertyChanged("MATACGIA");
-					this.OnMATACGIAChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACHUDE", DbType="Char(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACHUDE", DbType="Char(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string MACHUDE
 		{
 			get
@@ -291,10 +146,6 @@ namespace Blog.Models
 			{
 				if ((this._MACHUDE != value))
 				{
-					if (this._CHUDE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnMACHUDEChanging(value);
 					this.SendPropertyChanging();
 					this._MACHUDE = value;
@@ -304,149 +155,36 @@ namespace Blog.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAANH", DbType="Char(30)")]
-		public string MAANH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENCHUDE", DbType="NVarChar(MAX)")]
+		public string TENCHUDE
 		{
 			get
 			{
-				return this._MAANH;
+				return this._TENCHUDE;
 			}
 			set
 			{
-				if ((this._MAANH != value))
+				if ((this._TENCHUDE != value))
 				{
-					if (this._ANH.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAANHChanging(value);
+					this.OnTENCHUDEChanging(value);
 					this.SendPropertyChanging();
-					this._MAANH = value;
-					this.SendPropertyChanged("MAANH");
-					this.OnMAANHChanged();
+					this._TENCHUDE = value;
+					this.SendPropertyChanged("TENCHUDE");
+					this.OnTENCHUDEChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHITIET", DbType="NVarChar(MAX)")]
-		public string CHITIET
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUDE_TIN", Storage="_TINs", ThisKey="MACHUDE", OtherKey="MACHUDE")]
+		public EntitySet<TIN> TINs
 		{
 			get
 			{
-				return this._CHITIET;
+				return this._TINs;
 			}
 			set
 			{
-				if ((this._CHITIET != value))
-				{
-					this.OnCHITIETChanging(value);
-					this.SendPropertyChanging();
-					this._CHITIET = value;
-					this.SendPropertyChanged("CHITIET");
-					this.OnCHITIETChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TACGIA_TIN", Storage="_TACGIA", ThisKey="MATACGIA", OtherKey="MATACGIA", IsForeignKey=true)]
-		public TACGIA TACGIA
-		{
-			get
-			{
-				return this._TACGIA.Entity;
-			}
-			set
-			{
-				TACGIA previousValue = this._TACGIA.Entity;
-				if (((previousValue != value) 
-							|| (this._TACGIA.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TACGIA.Entity = null;
-						previousValue.TINs.Remove(this);
-					}
-					this._TACGIA.Entity = value;
-					if ((value != null))
-					{
-						value.TINs.Add(this);
-						this._MATACGIA = value.MATACGIA;
-					}
-					else
-					{
-						this._MATACGIA = default(string);
-					}
-					this.SendPropertyChanged("TACGIA");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUDE_TIN", Storage="_CHUDE", ThisKey="MACHUDE", OtherKey="MACHUDE", IsForeignKey=true)]
-		public CHUDE CHUDE
-		{
-			get
-			{
-				return this._CHUDE.Entity;
-			}
-			set
-			{
-				CHUDE previousValue = this._CHUDE.Entity;
-				if (((previousValue != value) 
-							|| (this._CHUDE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._CHUDE.Entity = null;
-						previousValue.TINs.Remove(this);
-					}
-					this._CHUDE.Entity = value;
-					if ((value != null))
-					{
-						value.TINs.Add(this);
-						this._MACHUDE = value.MACHUDE;
-					}
-					else
-					{
-						this._MACHUDE = default(string);
-					}
-					this.SendPropertyChanged("CHUDE");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ANH_TIN", Storage="_ANH", ThisKey="MAANH", OtherKey="MAANH", IsForeignKey=true)]
-		public ANH ANH
-		{
-			get
-			{
-				return this._ANH.Entity;
-			}
-			set
-			{
-				ANH previousValue = this._ANH.Entity;
-				if (((previousValue != value) 
-							|| (this._ANH.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._ANH.Entity = null;
-						previousValue.TINs.Remove(this);
-					}
-					this._ANH.Entity = value;
-					if ((value != null))
-					{
-						value.TINs.Add(this);
-						this._MAANH = value.MAANH;
-					}
-					else
-					{
-						this._MAANH = default(string);
-					}
-					this.SendPropertyChanged("ANH");
-				}
+				this._TINs.Assign(value);
 			}
 		}
 		
@@ -468,6 +206,18 @@ namespace Blog.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_TINs(TIN entity)
+		{
+			this.SendPropertyChanging();
+			entity.CHUDE = this;
+		}
+		
+		private void detach_TINs(TIN entity)
+		{
+			this.SendPropertyChanging();
+			entity.CHUDE = null;
 		}
 	}
 	
@@ -585,35 +335,166 @@ namespace Blog.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CHUDE")]
-	public partial class CHUDE : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TIN")]
+	public partial class TIN : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
+		private string _MATIN;
+		
+		private string _TENTIN;
+		
+		private string _MOTA;
+		
+		private System.Nullable<System.DateTime> _NGAYDANG;
+		
+		private string _MATACGIA;
+		
 		private string _MACHUDE;
 		
-		private string _TENCHUDE;
+		private string _MAANH;
 		
-		private EntitySet<TIN> _TINs;
+		private string _CHITIET;
+		
+		private EntityRef<CHUDE> _CHUDE;
+		
+		private EntityRef<TACGIA> _TACGIA;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
+    partial void OnMATINChanging(string value);
+    partial void OnMATINChanged();
+    partial void OnTENTINChanging(string value);
+    partial void OnTENTINChanged();
+    partial void OnMOTAChanging(string value);
+    partial void OnMOTAChanged();
+    partial void OnNGAYDANGChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYDANGChanged();
+    partial void OnMATACGIAChanging(string value);
+    partial void OnMATACGIAChanged();
     partial void OnMACHUDEChanging(string value);
     partial void OnMACHUDEChanged();
-    partial void OnTENCHUDEChanging(string value);
-    partial void OnTENCHUDEChanged();
+    partial void OnMAANHChanging(string value);
+    partial void OnMAANHChanged();
+    partial void OnCHITIETChanging(string value);
+    partial void OnCHITIETChanged();
     #endregion
 		
-		public CHUDE()
+		public TIN()
 		{
-			this._TINs = new EntitySet<TIN>(new Action<TIN>(this.attach_TINs), new Action<TIN>(this.detach_TINs));
+			this._CHUDE = default(EntityRef<CHUDE>);
+			this._TACGIA = default(EntityRef<TACGIA>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACHUDE", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATIN", DbType="Char(3) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MATIN
+		{
+			get
+			{
+				return this._MATIN;
+			}
+			set
+			{
+				if ((this._MATIN != value))
+				{
+					this.OnMATINChanging(value);
+					this.SendPropertyChanging();
+					this._MATIN = value;
+					this.SendPropertyChanged("MATIN");
+					this.OnMATINChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTIN", DbType="NVarChar(MAX)")]
+		public string TENTIN
+		{
+			get
+			{
+				return this._TENTIN;
+			}
+			set
+			{
+				if ((this._TENTIN != value))
+				{
+					this.OnTENTINChanging(value);
+					this.SendPropertyChanging();
+					this._TENTIN = value;
+					this.SendPropertyChanged("TENTIN");
+					this.OnTENTINChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(MAX)")]
+		public string MOTA
+		{
+			get
+			{
+				return this._MOTA;
+			}
+			set
+			{
+				if ((this._MOTA != value))
+				{
+					this.OnMOTAChanging(value);
+					this.SendPropertyChanging();
+					this._MOTA = value;
+					this.SendPropertyChanged("MOTA");
+					this.OnMOTAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDANG", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYDANG
+		{
+			get
+			{
+				return this._NGAYDANG;
+			}
+			set
+			{
+				if ((this._NGAYDANG != value))
+				{
+					this.OnNGAYDANGChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYDANG = value;
+					this.SendPropertyChanged("NGAYDANG");
+					this.OnNGAYDANGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATACGIA", DbType="Char(30)")]
+		public string MATACGIA
+		{
+			get
+			{
+				return this._MATACGIA;
+			}
+			set
+			{
+				if ((this._MATACGIA != value))
+				{
+					if (this._TACGIA.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMATACGIAChanging(value);
+					this.SendPropertyChanging();
+					this._MATACGIA = value;
+					this.SendPropertyChanged("MATACGIA");
+					this.OnMATACGIAChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACHUDE", DbType="Char(30)")]
 		public string MACHUDE
 		{
 			get
@@ -624,6 +505,10 @@ namespace Blog.Models
 			{
 				if ((this._MACHUDE != value))
 				{
+					if (this._CHUDE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMACHUDEChanging(value);
 					this.SendPropertyChanging();
 					this._MACHUDE = value;
@@ -633,101 +518,7 @@ namespace Blog.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENCHUDE", DbType="NVarChar(50)")]
-		public string TENCHUDE
-		{
-			get
-			{
-				return this._TENCHUDE;
-			}
-			set
-			{
-				if ((this._TENCHUDE != value))
-				{
-					this.OnTENCHUDEChanging(value);
-					this.SendPropertyChanging();
-					this._TENCHUDE = value;
-					this.SendPropertyChanged("TENCHUDE");
-					this.OnTENCHUDEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUDE_TIN", Storage="_TINs", ThisKey="MACHUDE", OtherKey="MACHUDE")]
-		public EntitySet<TIN> TINs
-		{
-			get
-			{
-				return this._TINs;
-			}
-			set
-			{
-				this._TINs.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TINs(TIN entity)
-		{
-			this.SendPropertyChanging();
-			entity.CHUDE = this;
-		}
-		
-		private void detach_TINs(TIN entity)
-		{
-			this.SendPropertyChanging();
-			entity.CHUDE = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ANH")]
-	public partial class ANH : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MAANH;
-		
-		private string _TENANH;
-		
-		private EntitySet<TIN> _TINs;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMAANHChanging(string value);
-    partial void OnMAANHChanged();
-    partial void OnTENANHChanging(string value);
-    partial void OnTENANHChanged();
-    #endregion
-		
-		public ANH()
-		{
-			this._TINs = new EntitySet<TIN>(new Action<TIN>(this.attach_TINs), new Action<TIN>(this.detach_TINs));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAANH", DbType="Char(30) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAANH", DbType="Char(30)")]
 		public string MAANH
 		{
 			get
@@ -747,36 +538,91 @@ namespace Blog.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENANH", DbType="NVarChar(MAX)")]
-		public string TENANH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CHITIET", DbType="NVarChar(MAX)")]
+		public string CHITIET
 		{
 			get
 			{
-				return this._TENANH;
+				return this._CHITIET;
 			}
 			set
 			{
-				if ((this._TENANH != value))
+				if ((this._CHITIET != value))
 				{
-					this.OnTENANHChanging(value);
+					this.OnCHITIETChanging(value);
 					this.SendPropertyChanging();
-					this._TENANH = value;
-					this.SendPropertyChanged("TENANH");
-					this.OnTENANHChanged();
+					this._CHITIET = value;
+					this.SendPropertyChanged("CHITIET");
+					this.OnCHITIETChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="ANH_TIN", Storage="_TINs", ThisKey="MAANH", OtherKey="MAANH")]
-		public EntitySet<TIN> TINs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CHUDE_TIN", Storage="_CHUDE", ThisKey="MACHUDE", OtherKey="MACHUDE", IsForeignKey=true)]
+		public CHUDE CHUDE
 		{
 			get
 			{
-				return this._TINs;
+				return this._CHUDE.Entity;
 			}
 			set
 			{
-				this._TINs.Assign(value);
+				CHUDE previousValue = this._CHUDE.Entity;
+				if (((previousValue != value) 
+							|| (this._CHUDE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CHUDE.Entity = null;
+						previousValue.TINs.Remove(this);
+					}
+					this._CHUDE.Entity = value;
+					if ((value != null))
+					{
+						value.TINs.Add(this);
+						this._MACHUDE = value.MACHUDE;
+					}
+					else
+					{
+						this._MACHUDE = default(string);
+					}
+					this.SendPropertyChanged("CHUDE");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TACGIA_TIN", Storage="_TACGIA", ThisKey="MATACGIA", OtherKey="MATACGIA", IsForeignKey=true)]
+		public TACGIA TACGIA
+		{
+			get
+			{
+				return this._TACGIA.Entity;
+			}
+			set
+			{
+				TACGIA previousValue = this._TACGIA.Entity;
+				if (((previousValue != value) 
+							|| (this._TACGIA.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TACGIA.Entity = null;
+						previousValue.TINs.Remove(this);
+					}
+					this._TACGIA.Entity = value;
+					if ((value != null))
+					{
+						value.TINs.Add(this);
+						this._MATACGIA = value.MATACGIA;
+					}
+					else
+					{
+						this._MATACGIA = default(string);
+					}
+					this.SendPropertyChanged("TACGIA");
+				}
 			}
 		}
 		
@@ -799,18 +645,6 @@ namespace Blog.Models
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_TINs(TIN entity)
-		{
-			this.SendPropertyChanging();
-			entity.ANH = this;
-		}
-		
-		private void detach_TINs(TIN entity)
-		{
-			this.SendPropertyChanging();
-			entity.ANH = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ADMIN")]
@@ -819,9 +653,7 @@ namespace Blog.Models
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MAADMIN;
-		
-		private string _TENTAIKHOAN;
+		private string _TENDANGNHAP;
 		
 		private string _MATKHAU;
 		
@@ -829,10 +661,8 @@ namespace Blog.Models
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMAADMINChanging(string value);
-    partial void OnMAADMINChanged();
-    partial void OnTENTAIKHOANChanging(string value);
-    partial void OnTENTAIKHOANChanged();
+    partial void OnTENDANGNHAPChanging(string value);
+    partial void OnTENDANGNHAPChanged();
     partial void OnMATKHAUChanging(string value);
     partial void OnMATKHAUChanged();
     #endregion
@@ -842,42 +672,22 @@ namespace Blog.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAADMIN", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MAADMIN
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENDANGNHAP", DbType="Char(16) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string TENDANGNHAP
 		{
 			get
 			{
-				return this._MAADMIN;
+				return this._TENDANGNHAP;
 			}
 			set
 			{
-				if ((this._MAADMIN != value))
+				if ((this._TENDANGNHAP != value))
 				{
-					this.OnMAADMINChanging(value);
+					this.OnTENDANGNHAPChanging(value);
 					this.SendPropertyChanging();
-					this._MAADMIN = value;
-					this.SendPropertyChanged("MAADMIN");
-					this.OnMAADMINChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENTAIKHOAN", DbType="Char(30)")]
-		public string TENTAIKHOAN
-		{
-			get
-			{
-				return this._TENTAIKHOAN;
-			}
-			set
-			{
-				if ((this._TENTAIKHOAN != value))
-				{
-					this.OnTENTAIKHOANChanging(value);
-					this.SendPropertyChanging();
-					this._TENTAIKHOAN = value;
-					this.SendPropertyChanged("TENTAIKHOAN");
-					this.OnTENTAIKHOANChanged();
+					this._TENDANGNHAP = value;
+					this.SendPropertyChanged("TENDANGNHAP");
+					this.OnTENDANGNHAPChanged();
 				}
 			}
 		}

@@ -48,11 +48,11 @@
                 @foreach (var tin in Model)
                 {
                     <li>
-                        <img src="https://cdnmedia.baotintuc.vn/Upload/xWDHf0fP0gRVbF1yzOohA/files/2020/04/1204-evn.jpg" alt="" class="ad"/>
+                        @*<img src="~/HinhAnh/@Model.MAANH" alt="" class="ad"/>*@
                         <p class="author"><span>10.06.2020</span></p>
-                        <h3><a href="@Url.Action("Details","Home",new { id = tin.MATIN})"> @tin.TENTIN </a></h3>
+                        <h3><a href="@Url.Action("Detail","Home",new { id = tin.MATIN})"> @tin.TENTIN </a></h3>
                         <p>@tin.MOTA</p>
-                        <p><a href="#">Xem chi tiết &raquo;</a></p>
+                        <p><a href="@Url.Action("Detail","Home",new { id = tin.MATIN})">Xem chi tiết &raquo;</a></p>
                     </li>
                 }
             </div>

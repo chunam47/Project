@@ -1,18 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Blog" Class="dbBlogDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=NAM\SQLEXPRESS;Initial Catalog=Blog;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BlogConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TIN" Member="TINs">
-    <Type Name="TIN">
-      <Column Name="MATIN" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENTIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="NGAYDANG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="MATACGIA" Type="System.String" DbType="Char(30)" CanBeNull="true" />
-      <Column Name="MACHUDE" Type="System.String" DbType="Char(10)" CanBeNull="true" />
-      <Column Name="MAANH" Type="System.String" DbType="Char(30)" CanBeNull="true" />
-      <Column Name="CHITIET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="TACGIA_TIN" Member="TACGIA" ThisKey="MATACGIA" OtherKey="MATACGIA" Type="TACGIA" IsForeignKey="true" />
-      <Association Name="CHUDE_TIN" Member="CHUDE" ThisKey="MACHUDE" OtherKey="MACHUDE" Type="CHUDE" IsForeignKey="true" />
-      <Association Name="ANH_TIN" Member="ANH" ThisKey="MAANH" OtherKey="MAANH" Type="ANH" IsForeignKey="true" />
+  <Table Name="dbo.CHUDE" Member="CHUDEs">
+    <Type Name="CHUDE">
+      <Column Name="MACHUDE" Type="System.String" DbType="Char(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENCHUDE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="CHUDE_TIN" Member="TINs" ThisKey="MACHUDE" OtherKey="MACHUDE" Type="TIN" />
     </Type>
   </Table>
   <Table Name="dbo.TACGIA" Member="TACGIAs">
@@ -22,24 +14,23 @@
       <Association Name="TACGIA_TIN" Member="TINs" ThisKey="MATACGIA" OtherKey="MATACGIA" Type="TIN" />
     </Type>
   </Table>
-  <Table Name="dbo.CHUDE" Member="CHUDEs">
-    <Type Name="CHUDE">
-      <Column Name="MACHUDE" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENCHUDE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="CHUDE_TIN" Member="TINs" ThisKey="MACHUDE" OtherKey="MACHUDE" Type="TIN" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ANH" Member="ANHs">
-    <Type Name="ANH">
-      <Column Name="MAANH" Type="System.String" DbType="Char(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENANH" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Association Name="ANH_TIN" Member="TINs" ThisKey="MAANH" OtherKey="MAANH" Type="TIN" />
+  <Table Name="dbo.TIN" Member="TINs">
+    <Type Name="TIN">
+      <Column Name="MATIN" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENTIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NGAYDANG" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MATACGIA" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="MACHUDE" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="MAANH" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="CHITIET" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="CHUDE_TIN" Member="CHUDE" ThisKey="MACHUDE" OtherKey="MACHUDE" Type="CHUDE" IsForeignKey="true" />
+      <Association Name="TACGIA_TIN" Member="TACGIA" ThisKey="MATACGIA" OtherKey="MATACGIA" Type="TACGIA" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.ADMIN" Member="ADMINs">
     <Type Name="ADMIN">
-      <Column Name="MAADMIN" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENTAIKHOAN" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="TENDANGNHAP" Type="System.String" DbType="Char(16) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MATKHAU" Type="System.String" DbType="Char(30)" CanBeNull="true" />
     </Type>
   </Table>

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Blog.Models.TIN>
+
+@{
+    ViewBag.Title = "Tin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2 style="text-transform: uppercase;text-align:center;color: red;">quản lý tin tức</h2>
+<h3>
+    @Html.ActionLink("Thêm tin tức", "Themmoi")
+</h3>
+<table class="table">
+    <tr>
+        <th style="border-left: 1px solid #cccccc;">
+            @Html.DisplayNameFor(model => model.TENTIN)
+        </th>
+        <th style="border-left: 1px solid #cccccc;">
+            @Html.DisplayNameFor(model => model.MOTA)
+        </th>
+        <th style="border-left: 1px solid #cccccc;">
+            @Html.DisplayNameFor(model => model.NGAYDANG)
+        </th>
+        <th style="border-left: 1px solid #cccccc;">
+            @Html.DisplayNameFor(model => model.MATACGIA)
+        </th>
+        <th style="border-left: 1px solid #cccccc;">
+            @Html.DisplayNameFor(model => model.MACHUDE)
+        </th>
+        <th style="border-left: 1px solid #cccccc;">
+            @Html.DisplayNameFor(model => model.MAANH)
+        </th>
+        <th style="border-left: 1px solid #cccccc; border-right: 1px solid #cccccc;">
+            @Html.DisplayNameFor(model => model.CHITIET)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="width: 270px; border-right: 1px solid #cccccc;">
+            @Html.DisplayFor(modelItem => item.TENTIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOTA)
+        </td>
+        <td style="width: 200px; border-left: 1px solid #cccccc;">
+            @Html.DisplayFor(modelItem => item.NGAYDANG)
+        </td>
+        <td style="width: 170px; border-left: 1px solid #cccccc;">
+            @Html.DisplayFor(modelItem => item.MATACGIA)
+        </td>
+        <td style="width: 170px; border-left: 1px solid #cccccc;">
+            @Html.DisplayFor(modelItem => item.MACHUDE)
+        </td>
+        <td style="width: 170px; border-left: 1px solid #cccccc;">
+            @Html.DisplayFor(modelItem => item.MAANH)
+        </td>
+        <td style="width: 500px; border-left: 1px solid #cccccc;">
+            @Html.DisplayFor(modelItem => item.CHITIET)
+        </td>
+        <td style="width: 170px; border-left: 1px solid #cccccc;">
+            @Html.ActionLink("Edit", "Edit", new { id=item.MATIN }) |
+            @Html.ActionLink("Xóa", "Xoa", new { id=item.MATIN })
+        </td>
+    </tr>
+}
+
+</table>

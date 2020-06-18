@@ -41,10 +41,12 @@ namespace Blog.Controllers
             return View(tin);
         }
 
-        //public ActionResult Detail (string id)
-        //{
-        //    var tin = from s in data.TINs where s.MATIN == id select s;
-        //    return (tin.Single());
-        //}
+        public ActionResult Detail(string id)
+        {
+            var tin = from s in data.TINs
+                      where s.MATIN == id
+                      select s;
+            return View(tin.Single());
+        }
     }
 }

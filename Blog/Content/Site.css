@@ -3,12 +3,16 @@
     padding-left: 0px;
     padding-right: 0px;
     width: 980px;
+    font-size: 16px;
+    font-family: 'Times New Roman';
 }
 
 li {
     list-style: none;
 }
-
+.body-content p{
+    font-size: 20px;
+}
 h2{
   text-transform:uppercase;
   text-align:center;
@@ -28,7 +32,9 @@ textarea {
     max-width: 280px;
 }
 
-
+img{
+    width: 100%;
+}
 
 .list li {
     list-style: none;

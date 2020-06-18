@@ -197,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TrangChuController.cs" />
@@ -218,10 +219,32 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\global.css" />
+    <Content Include="Content\login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HinhAnh\1.jpg" />
+    <Content Include="HinhAnh\a.png" />
+    <Content Include="HinhAnh\as.jpg" />
+    <Content Include="HinhAnh\asd.jpg" />
+    <Content Include="HinhAnh\asdf.jpg" />
+    <Content Include="HinhAnh\COVID.jpg" />
+    <Content Include="HinhAnh\david.jpg" />
+    <Content Include="HinhAnh\e.jpg" />
+    <Content Include="HinhAnh\Hinh1.png" />
+    <Content Include="HinhAnh\ht.jpg" />
+    <Content Include="HinhAnh\kinh.jpg" />
+    <Content Include="HinhAnh\mua1.jpg" />
+    <Content Include="HinhAnh\mua2.jpg" />
+    <Content Include="HinhAnh\q.jpg" />
+    <Content Include="HinhAnh\q.png" />
+    <Content Include="HinhAnh\quansu.jpg" />
+    <Content Include="HinhAnh\ro.jpg" />
+    <Content Include="HinhAnh\tn.jpg" />
+    <Content Include="HinhAnh\vn.jpg" />
+    <Content Include="HinhAnh\vt.jpg" />
+    <Content Include="HinhAnh\w.jpg" />
     <Content Include="Scripts\ai.0.22.9-build00167.js" />
     <Content Include="Scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -278,10 +301,16 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\TheoChuDe.cshtml" />
+    <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Tin.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Themmoi.cshtml" />
+    <Content Include="Views\Admin\Xoa.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TrangChu\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

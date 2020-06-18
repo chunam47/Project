@@ -1,0 +1,52 @@
+﻿body{
+    font-size: 16px;
+    border-radius: 18px;
+    margin: 130px auto;
+}
+table{
+
+}
+.btn-default{
+
+}
+}
+.text{
+    padding-bottom: 35px;
+}
+.err{
+    color: red;
+    margin-top: -17px;
+    margin-left: 15px;
+}
+}
+.login{
+    margin-top: 3%;
+}
+#username, #password{
+    width: 400px;
+    color: #666;
+    height: 38px;
+    border: 1px solid #CCC;
+    border-radius: 13px;
+    outline: none;
+    margin-left: 10px;
+    margin-bottom: 43px;
+}
+h3{
+    color: red;
+    margin: 30px 0;
+}
+#button, .btn-default{
+    background-color: #055698;
+    margin-left: 10px;
+    height: 50px;
+    border: 0;
+    width: 400px;
+    color: #fff;
+    font-size: 18px;
+    font-family: Tahoma;
+    font-weight: bold;
+    border-radius: 18px;
+    outline: none;
+    margin-bottom: 30px;
+}

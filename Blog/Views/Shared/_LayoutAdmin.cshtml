@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Bootstrap Core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="~/Content/shop-homepage.css" rel="stylesheet" />
+    <link href="~/Content/login.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        @Html.ActionLink("TRANG CHỦ","Index","Home")
+                    </li>
+                    <li>
+                        @Html.ActionLink("TRANG QUẢN LÝ", "Index", "Admin")
+                    </li>
+                    
+                    <li>
+                        @Html.ActionLink("QL tin tức", "Tin", "Admin")
+                    </li>
+                    
+                </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+
+
+        <!-- /.container -->
+    </nav>
+    @*<div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                @Html.Action("ThucDon", "FastFood")
+
+            </div>
+
+            <div class="col-md-9">
+
+                <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="~/fastfood/matcha_homeslide.jpg" alt="Matcha da xay" />
+                                </div>
+                                <div class="item">
+                                    <img src="~/fastfood/spicyteasing_homeslide.jpg" alt="Ga cay" />
+                                </div>
+                                <div class="item">
+                                    <img src="~/fastfood/daua_homeslide.jpg" alt="daua tang de khang" />
+                                </div>
+
+
+                            </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>*@
+                <div>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
